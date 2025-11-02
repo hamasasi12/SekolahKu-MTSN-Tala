@@ -18,10 +18,10 @@ class UserSeeder extends Seeder
          $user = User::create([
             'name'      => 'Kepala Sekolah',
             'username'  => 'kepsek',
-            'email'     => 'kepsek@sch.id',
+            'email'     => 'admin@gmail.com',
             'role'      => 'Admin',
             'status'    => 'Aktif',
-            'password'  => bcrypt('Bismillah')
+            'password'  => bcrypt('password')
         ]);
 
         $user->assignRole('Admin');

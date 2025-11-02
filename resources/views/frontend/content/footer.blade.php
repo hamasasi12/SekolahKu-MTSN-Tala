@@ -1,7 +1,7 @@
 <div class="footer-area-top">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            {{-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="footer-box">
                     <a href="/">
                         @if (@$footer->logo == NULL)
@@ -20,8 +20,8 @@
                         <li><a href="{{'https://www.instagram.com/',@$footer->instagram}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            </div> --}}
+            {{-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="footer-box">
                     <h3>Informasi</h3>
                     <ul class="corporate-address">
@@ -40,8 +40,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            </div> --}}
+            {{-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="footer-box">
                     <h3>Photos</h3>
                     <ul class="flickr-photos">
@@ -65,15 +65,25 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
 <div class="footer-area-bottom">
     <div class="container">
+         {{-- <footer class="footer-info fade-in">
+            <div>
+                <span>📧 info@mtsn7tanahlaut.sch.id</span>
+                <span>📞 (0512) 123456</span>
+                <span>📍 Tanah Laut, Kalimantan Selatan</span>
+            </div>
+            <div style="margin-top: 10px; font-size: 13px; opacity: 0.8;">
+                Copyright © Himpunan Mahasiswa Elektro 2025
+            </div>
+        </footer> --}}
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                <p>&copy; {{date('Y')}} <a href="http://andridesmana.pw/" target="_blank">Andri Desmana</a> All Rights Reserved.</p>
+                <p>&copy; {{date('Y')}} <a href="#" target="_blank"> Copyright © Himpunan Mahasiswa Elektro 2025</a> All Rights Reserved.</p>
             </div>
             {{-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <ul class="payment-method">

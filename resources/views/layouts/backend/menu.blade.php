@@ -47,11 +47,11 @@
                     <span class="menu-title text-truncate" data-i18n="Data Sekolah">Data Sekolah</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="nav-item {{ (request()->is('program-studi')) ? 'active' : '' }}">
+                    {{-- <li class="nav-item {{ (request()->is('program-studi')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('program-studi.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">Program Studi</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item {{ (request()->is('backend-kegiatan')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('backend-kegiatan.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">Kegiatan</span>

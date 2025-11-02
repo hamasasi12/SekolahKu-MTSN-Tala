@@ -6,7 +6,7 @@
                     <div class="header-top-left">
                         <div class="logo-area">
                             @if (@$footer->logo == NULL)
-                            <img class="img-responsive" src="{{asset('Assets/Frontend/img/logo-footer.png')}}" alt="logo">
+                            <img class="img-responsive" src="{{asset('Assets/Frontend/img/logofix.png')}}" alt="logo" width="50" height="50">
                         @else
                             <img class="img-responsive" src="{{asset('storage/images/logo/' .$footer->logo)}}" alt="logo">
                         @endif
@@ -47,13 +47,13 @@
 
                             <li><a href="#">Program</a>
                                 <ul>
-                                    <li class="has-child-menu"><a href="#">Program Studi</a>
+                                    {{-- <li class="has-child-menu"><a href="#">Program Studi</a>
                                         <ul class="thired-level">
                                             @foreach ($jurusanM as $jurusans)
                                                 <li><a href=" {{ url('program', $jurusans->slug)}} "> {{$jurusans->nama}} </a></li>
                                             @endforeach
                                         </ul>
-                                    </li>
+                                    </li> --}}
                                     <li class="has-child-menu"><a href="#">Kegiatan</a>
                                         <ul class="thired-level">
                                             @foreach ($kegiatanM as $kegiatans)

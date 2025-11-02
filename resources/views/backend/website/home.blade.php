@@ -20,9 +20,6 @@
                         </div>
                         <div class="text-center">
                             <h1 class="mb-1 text-white">Welcome {{Auth::user()->name}},</h1>
-                            <p class="card-text m-auto w-75">
-                                Have fun your day :)
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -134,7 +131,7 @@
                             </div>
                             <div class="media-body">
                                 <h6 class="mb-0">{{$event->lokasi ?? 'Belum Ada Event'}}</h6>
-                                <small>Manhattan, New york City</small>
+                                <small>JL. RAYA KURINGKIT, Kuringkit, Kec. Panyipatan, Kab. Tanah Laut Prov. Kalimantan Selatan</small>
                             </div>
                         </div>
 
