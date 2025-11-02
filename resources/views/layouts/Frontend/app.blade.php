@@ -57,5 +57,4 @@
     <!-- Main Body Area End Here -->
     @include('layouts.Frontend.scripts')
 </body>
-
 </html>
