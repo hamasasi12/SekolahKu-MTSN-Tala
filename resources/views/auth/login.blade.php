@@ -1,176 +1,194 @@
 <!DOCTYPE html>
-<html class="loading semi-dark-layout" lang="en" data-layout="semi-dark-layout" data-textdirection="ltr">
-<!-- BEGIN: Head-->
-
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sekolahku adalah aplikasi manajemen sekolah berbasis website yang di bangun dan di kembangkan dengan Framework Laravel">
-    <meta name="keywords" content="">
     <meta name="author" content="Andri Desmana">
     <title>Login Page - SekolahKu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
-
-    <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/vendors/css/vendors.min.css')}}">
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/themes/bordered-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/themes/semi-dark-layout.css')}}">
-
-    <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/plugins/forms/form-validation.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/pages/page-auth.css')}}">
-    <!-- END: Page CSS-->
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
 </head>
-<!-- END: Head-->
-
-<!-- BEGIN: Body-->
-
-<body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="blank-page">
-    <!-- BEGIN: Content-->
-    <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper">
-            <div class="content-header row">
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
+    <div class="min-h-screen flex">
+        <!-- Left Side - Illustration (Hidden on mobile) -->
+        <div class="hidden lg:flex lg:w-3/5 bg-gradient-to-br from-green-50 to-green-100 items-center justify-center p-12">
+            <div class="w-full max-w-2xl px-8">
+                <img 
+                    src="{{asset('Assets/Backend/images/illustration/login-v2.svg')}}" 
+                    alt="Login Illustration" 
+                    class="w-full h-auto object-contain"
+                    loading="eager"
+                />
             </div>
-            <div class="content-body">
-                <div class="auth-wrapper auth-v2">
-                    <div class="auth-inner row m-0">
-                        <!-- Brand logo--><a class="brand-logo" href="/">
-                            <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
-                                <defs>
-                                    <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
-                                        <stop stop-color="#000000" offset="0%"></stop>
-                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
-                                    </lineargradient>
-                                    <lineargradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%" x2="37.373316%" y2="100%">
-                                        <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
-                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
-                                    </lineargradient>
-                                </defs>
-                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Artboard" transform="translate(-400.000000, -178.000000)">
-                                        <g id="Group" transform="translate(400.000000, 178.000000)">
-                                            <path class="text-primary" id="Path" d="M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z" style="fill: currentColor"></path>
-                                            <path id="Path1" d="M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z" fill="url(#linearGradient-1)" opacity="0.2"></path>
-                                            <polygon id="Path-2" fill="#000000" opacity="0.049999997" points="69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325"></polygon>
-                                            <polygon id="Path-21" fill="#000000" opacity="0.099999994" points="69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338"></polygon>
-                                            <polygon id="Path-3" fill="url(#linearGradient-2)" opacity="0.099999994" points="101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"></polygon>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                            <h2 class="brand-text text-primary ml-1">SekolahKu</h2>
-                        </a>
-                        <!-- /Brand logo-->
-                        <!-- Left Text-->
-                        <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
-                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{asset('Assets/Backend/images/illustration/login-v2.svg')}}" alt="Login V2" /></div>
-                        </div>
-                        <!-- /Left Text-->
-                        <!-- Login-->
-                        <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
-                            <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                                @if($message = Session::get('error'))
-                                    <div class="alert alert-danger" role="alert">
-                                        <div class="alert-body">
-                                            <strong>{{ $message }}</strong>
-                                            <button type="button" class="close" data-dismiss="alert">×</button>
-                                        </div>
-                                    </div>
-                                @elseif($message = Session::get('success'))
-                                <div class="alert alert-success" role="alert">
-                                    <div class="alert-body">
-                                        <strong>{{ $message }}</strong>
-                                        <button type="button" class="close" data-dismiss="alert">×</button>
-                                    </div>
-                                </div>
-                                @endif
-                                <h2 class="card-title font-weight-bold mb-1">Welcome to SekolahKu! 👋</h2>
-                                <p class="card-text mb-2">Silakan masuk ke akun Anda dan mulai petualangan</p>
-                                <form class="auth-login-form mt-2" action="{{route('login')}}" method="POST">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label class="form-label" for="login-email">Email</label>
-                                        <input class="form-control @error('email') is-invalid @enderror" id="login-email" type="text" name="email" value=" {{old('email')}} " placeholder="Masukan Email" aria-describedby="login-email" autofocus="" tabindex="1" />
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="d-flex justify-content-between">
-                                            <label for="login-password">Password</label><a href=""><small>Forgot Password?</small></a>
-                                        </div>
-                                        <div class="input-group input-group-merge form-password-toggle">
-                                            <input class="form-control form-control-merge @error('password') is-invalid @enderror" id="login-password" type="password" name="password" placeholder="············" aria-describedby="login-password" tabindex="2" />
-                                            <div class="input-group-append"><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span></div>
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input class="custom-control-input" id="remember-me" type="checkbox" tabindex="3" />
-                                            <label class="custom-control-label" for="remember-me"> Remember Me</label>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary btn-block" tabindex="4">Masuk</button>
-                                </form>
-                                </div>
-                        </div>
-                        <!-- /Login-->
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="w-full lg:w-2/5 flex items-center justify-center p-6 lg:p-12">
+            <div class="w-full max-w-md">
+                <!-- Brand Logo -->
+                <div class="flex items-center mb-8">
+                    <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <img src="{{ asset('Assets/Frontend/img/logofix.png') }}" alt="Logo Icon MTSn 7 Tanah Laut" loading="eager" class="w-8 h-8">
                     </div>
+                    <h1 class="ml-3 text-2xl font-bold text-green-700">SekolahKu</h1>
                 </div>
+
+                <!-- Alert Messages -->
+                <div id="errorAlert" class="hidden mb-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg relative">
+                    <span class="block sm:inline" id="errorMessage"></span>
+                    <button class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="this.parentElement.classList.add('hidden')">
+                        <svg class="fill-current h-6 w-6 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="successAlert" class="hidden mb-4 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg relative">
+                    <span class="block sm:inline" id="successMessage"></span>
+                    <button class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="this.parentElement.classList.add('hidden')">
+                        <svg class="fill-current h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Welcome Text -->
+                <h2 class="text-3xl font-bold text-gray-700 mb-2">Welcome to SekolahKu! 👋</h2>
+                <p class="text-gray-600 mb-8">Silakan masuk ke akun Anda menggunakan email dan password yang sudah didaftarkan.</p>
+
+                <!-- Login Form -->
+                <form class="space-y-6" id="loginForm">
+                    <!-- Email Input -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                            placeholder="Masukan Email"
+                            required
+                        >
+                        <p class="mt-1 text-sm text-red-600 hidden" id="emailError"></p>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <a href="#" class="text-sm text-green-600 hover:text-green-800">Forgot Password?</a>
+                        </div>
+                        <div class="relative">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition pr-12"
+                                placeholder="············"
+                                required
+                            >
+                            <button 
+                                type="button" 
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                                onclick="togglePassword()"
+                            >
+                                <svg id="eyeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="mt-1 text-sm text-red-600 hidden" id="passwordError"></p>
+                    </div>
+
+                    <!-- Remember Me Checkbox -->
+                    <div class="flex items-center">
+                        <input 
+                            type="checkbox" 
+                            id="remember" 
+                            name="remember" 
+                            class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                        >
+                        <label for="remember" class="ml-2 text-sm text-gray-700">Remember Me</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        class="w-full bg-green-700 text-white py-3 rounded-lg font-medium hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200"
+                    >
+                        Masuk
+                    </button>
+                </form>
+
+                <!-- Additional Links (Optional) -->
+                <p class="mt-6 text-center text-sm text-gray-600">
+                    Belum punya akun? 
+                    <a href="#" class="text-green-600 hover:text-green-700 font-medium">Daftar Sekarang</a>
+                </p>
             </div>
         </div>
     </div>
-    <!-- END: Content-->
-
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="{{asset('Assets/Backend/vendors/js/vendors.min.js')}}"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('Assets/Backend/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="{{asset('Assets/Backend/js/core/app-menu.js')}}"></script>
-    <script src="{{asset('Assets/Backend/js/core/app.js')}}"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="{{asset('Assets/Backend/js/scripts/pages/page-auth-login.js')}}"></script>
-    <!-- END: Page JS-->
 
     <script>
-        $(window).on('load', function() {
-            if (feather) {
-                feather.replace({
-                    width: 14,
-                    height: 14
-                });
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/>`;
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`;
             }
-        })
+        }
+
+        // Form validation and submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Clear previous errors
+            document.getElementById('emailError').classList.add('hidden');
+            document.getElementById('passwordError').classList.add('hidden');
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            let isValid = true;
+            
+            if (!email || !email.includes('@')) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                document.getElementById('emailError').classList.remove('hidden');
+                isValid = false;
+            }
+            
+            if (!password || password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                document.getElementById('passwordError').classList.remove('hidden');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Here you would typically submit to your Laravel backend
+                console.log('Form submitted:', { email, password });
+                
+                // Show success message (for demo)
+                document.getElementById('successMessage').textContent = 'Login berhasil! Mengalihkan...';
+                document.getElementById('successAlert').classList.remove('hidden');
+                
+                // In production, submit to your Laravel route:
+                // this.submit();
+            }
+        });
     </script>
 </body>
-<!-- END: Body-->
-
 </html>
