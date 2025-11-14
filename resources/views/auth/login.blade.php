@@ -36,7 +36,7 @@
                     <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
                         <img src="{{ asset('Assets/Frontend/img/logofix.png') }}" alt="Logo Icon MTSn 7 Tanah Laut" loading="eager" class="w-8 h-8">
                     </div>
-                    <h1 class="ml-3 text-2xl font-bold text-green-700">SekolahKu</h1>
+                    <h1 class="ml-3 text-2xl font-bold text-green-700">MTSn 7 Tanah Laut</h1>
                 </div>
 
                 <!-- Alert Messages -->
@@ -63,7 +63,8 @@
                 <p class="text-gray-600 mb-8">Silakan masuk ke akun Anda menggunakan email dan password yang sudah didaftarkan.</p>
 
                 <!-- Login Form -->
-                <form class="space-y-6" id="loginForm">
+                <form class="space-y-6" id="loginForm" action="{{ route('login') }}" method="POST">
+                    @csrf
                     <!-- Email Input -->
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
@@ -85,7 +86,7 @@
                             <a href="#" class="text-sm text-green-600 hover:text-green-800">Forgot Password?</a>
                         </div>
                         <div class="relative">
-                            <input 
+                            <input
                                 type="password" 
                                 id="password" 
                                 name="password" 
@@ -121,17 +122,16 @@
                     <!-- Submit Button -->
                     <button 
                         type="submit" 
-                        class="w-full bg-green-700 text-white py-3 rounded-lg font-medium hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200"
-                    >
+                        class="w-full bg-green-700 text-white py-3 rounded-lg font-medium hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200">
                         Masuk
                     </button>
                 </form>
 
                 <!-- Additional Links (Optional) -->
-                <p class="mt-6 text-center text-sm text-gray-600">
+                {{-- <p class="mt-6 text-center text-sm text-gray-600">
                     Belum punya akun? 
                     <a href="#" class="text-green-600 hover:text-green-700 font-medium">Daftar Sekarang</a>
-                </p>
+                </p> --}}
             </div>
         </div>
     </div>
@@ -147,48 +147,10 @@
                 eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/>`;
             } else {
                 passwordInput.type = 'password';
-                eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`;
+                eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-idth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`;
             }
-        }
+        }w
 
-        // Form validation and submission
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Clear previous errors
-            document.getElementById('emailError').classList.add('hidden');
-            document.getElementById('passwordError').classList.add('hidden');
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            // Simple validation
-            let isValid = true;
-            
-            if (!email || !email.includes('@')) {
-                document.getElementById('emailError').textContent = 'Please enter a valid email address';
-                document.getElementById('emailError').classList.remove('hidden');
-                isValid = false;
-            }
-            
-            if (!password || password.length < 6) {
-                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
-                document.getElementById('passwordError').classList.remove('hidden');
-                isValid = false;
-            }
-            
-            if (isValid) {
-                // Here you would typically submit to your Laravel backend
-                console.log('Form submitted:', { email, password });
-                
-                // Show success message (for demo)
-                document.getElementById('successMessage').textContent = 'Login berhasil! Mengalihkan...';
-                document.getElementById('successAlert').classList.remove('hidden');
-                
-                // In production, submit to your Laravel route:
-                // this.submit();
-            }
-        });
     </script>
 </body>
 </html>

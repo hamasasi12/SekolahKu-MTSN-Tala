@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             BeritaSeeders::class,
             EventSeeders::class,
+            VisimisiSeeders::class,
+            ProfileSekolahSeeders::class
         ]);
 
     }
